@@ -23,7 +23,7 @@ import com.example.amphibians.network.Amphibian
 import com.example.amphibians.network.AmphibianApi
 import kotlinx.coroutines.launch
 
-enum class AmphibianApiStatus {LOADING, ERROR, DONE}
+enum class AmphibianApiStatus { LOADING, ERROR, DONE }
 
 class AmphibianViewModel : ViewModel() {
 
@@ -42,7 +42,7 @@ class AmphibianViewModel : ViewModel() {
 
     // TODO: Create a function that gets a list of amphibians from the api service and sets the
     //  status via a Coroutine
-    private fun getAmphibians() {
+    fun getAmphibianList() {
         viewModelScope.launch {
             _status.value = AmphibianApiStatus.LOADING
             try {
